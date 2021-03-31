@@ -1,6 +1,6 @@
 {
   "name": "@barnardoswebteam/consent-banner",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Barnardo's consent banner.",
   "main": "consent-banner.node.js",
   "scripts": {
