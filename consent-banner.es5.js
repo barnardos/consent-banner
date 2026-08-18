@@ -19,6 +19,13 @@ window.BarnardosConsent = function(options) {
     var cookieURL = 'https://www.barnardos.org.uk/cookie-notice';
   }
 
+  let domainURL;
+  if (document.location.hostname == "barnardos.uat.go-donate.uk") {
+    domainURL = "barnardos.uat.go-donate.uk"
+  } else {
+    domainURL = ".barnardos.org.uk"
+  }
+
   var getCookieValue = function(name) {
     var result = document.cookie.match(
       '(^|[^;]+)\\s*' + name + '\\s*=\\s*([^;]+)'
@@ -96,7 +103,7 @@ window.BarnardosConsent = function(options) {
     document.cookie =
       'consentBanner=closed; expires=' +
       expires +
-      ';domain=.barnardos.org.uk; path=/; SameSite=Strict';
+      ';domain=${domainURL}; path=/; SameSite=Strict';
   };
 
   // Load the scripts and trackers
@@ -120,7 +127,7 @@ window.BarnardosConsent = function(options) {
     document.cookie =
       'consentAction=accept; expires=' +
       expires +
-      ';domain=.barnardos.org.uk; path=/; SameSite=Strict';
+      ';domain=${domainURL}; path=/; SameSite=Strict';
   };
 
   // Create a YYYY-MM date format
