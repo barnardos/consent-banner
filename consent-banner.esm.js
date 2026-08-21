@@ -7,6 +7,7 @@ export default () => {
 
   let privacyURL; 
   let cookieURL;
+  let domainURL = document.location.hostname;
 
   if(process.env.PRIVACY_URL) {
     privacyURL = options.privacyURL;
@@ -94,7 +95,7 @@ export default () => {
     cookieOverlay.parentNode.removeChild(cookieOverlay);
     const expires = new Date();
     expires.setDate(expires.getDate() + 365);
-    document.cookie = `consentBanner=closed; expires=${expires}; domain=.barnardos.org.uk; path=/; SameSite=Strict`;
+    document.cookie = `consentBanner=closed; expires=${expires}; domain=${domainURL}; path=/; SameSite=Strict`;
   };
 
   // Load the scripts and trackers
@@ -114,7 +115,7 @@ export default () => {
     // Add acceptance to cookie so we can load the trackers and scripts with subsequent page views
     const expires = new Date();
     expires.setDate(expires.getDate() + 365);
-    document.cookie = `consentAction=accept; expires=${expires}; domain=.barnardos.org.uk; path=/; SameSite=Strict`;
+    document.cookie = `consentAction=accept; expires=${expires}; domain=${domainURL}; path=/; SameSite=Strict`;
   };
 
   // Create a YYYY-MM date format

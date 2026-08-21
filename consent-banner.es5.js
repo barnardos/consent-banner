@@ -19,12 +19,7 @@ window.BarnardosConsent = function(options) {
     var cookieURL = 'https://www.barnardos.org.uk/cookie-notice';
   }
 
-  let domainURL;
-  if (document.location.hostname == "barnardos.uat.go-donate.uk") {
-    domainURL = "barnardos.uat.go-donate.uk"
-  } else {
-    domainURL = ".barnardos.org.uk"
-  }
+  let domainURL = document.location.hostname;
 
   var getCookieValue = function(name) {
     var result = document.cookie.match(
