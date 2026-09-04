@@ -98,7 +98,7 @@ window.BarnardosConsent = function(options) {
     document.cookie =
       'consentBanner=closed; expires=' +
       expires +
-      ';domain=${domainURL}; path=/; SameSite=Strict';
+      ';domain=' + domainURL + '; path=/; SameSite=Strict';
   };
 
   // Load the scripts and trackers
@@ -122,7 +122,7 @@ window.BarnardosConsent = function(options) {
     document.cookie =
       'consentAction=accept; expires=' +
       expires +
-      ';domain=${domainURL}; path=/; SameSite=Strict';
+      ';domain=' + domainURL + '; path=/; SameSite=Strict';
   };
 
   // Create a YYYY-MM date format
